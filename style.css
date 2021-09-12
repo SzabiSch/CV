@@ -1,0 +1,36 @@
+/*
+font-family: 'Dancing Script', cursive;
+font-family: 'Lora', serif;
+font-family: 'Roboto', sans-serif;
+*/
+
+
+*:after {
+  box-sizing: border-box;
+}
+}
+h1,
+h2,
+h3 {
+  font-family: "Roboto", sans-serif;
+}
+
+body {
+  margin: 0;
+}
+p {
+  font-family: "Dancing Script", cursive;
+}
+
+/* some effects */
+.header {
+  padding: 48px 16px;
+  text-align: center;
+  background-color: lightsalmon;
+}
+.main {
+  max-width: 800px;
+  margin: 0 auto;
+  padding:16px;
+  background-color: white;
+}
