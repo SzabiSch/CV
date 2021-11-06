@@ -4,33 +4,161 @@ font-family: 'Lora', serif;
 font-family: 'Roboto', sans-serif;
 */
 
-
 *:after {
   box-sizing: border-box;
 }
+
+html {
+  font-family: "Roboto", sans-sarif;
+  font-size: 16px;
 }
+@media screen and (min-width: 768px) {
+  html {
+    font-size: 20px;
+  }
+  .main {
+    max-width: 65ch;
+  }
+}
+
+@media screen and (min-width: 992px) {
+  html {
+    font-size: 22px;
+  }
+  .main {
+    max-width: 60ch;
+  }
+}
+
 h1,
 h2,
 h3 {
-  font-family: "Roboto", sans-serif;
+  font-family: "Oswald", sans-serif;
 }
-
 body {
   margin: 0;
 }
-p {
-  font-family: "Dancing Script", cursive;
+.content {
+  font-family: "Lora", cursive;
+  text-align: justify;
 }
 
+**:selection {
+  background-color: snow;
+}
 /* some effects */
 .header {
-  padding: 48px 16px;
+  padding: 3rem 0rem;
+  margin-top: 0rem;
   text-align: center;
   background-color: lightsalmon;
 }
+
+.head-job::after {
+  content: "👨‍🎓";
+}
+
+.navigation {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+/* hover and coloring*/
+.navigation:hover {
+  color: blue;
+  background-color: yellow;
+}
+/* Dynamische Faerbung beim click*/
+.navigation:active {
+  background-color: red;
+  color: white;
+  transition: 4s;
+  font-weight: bold;
+  padding: 5px;
+  border-radius: 5px;
+}
+
+/* Entfernung zw Nav Elementen*/
+.navigation + .navigation {
+  margin-left: 16px;
+}
+
+@media screen and (min-width: 768px) {
+  nav {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 2rem;
+  }
+}
+.head-name {
+  font-size: 4em;
+}
+
+.head-job {
+  font-size: 1em;
+}
+
+.hire-me {
+  position: absolute;
+  top: 2rem;
+  right: 2rem;
+  border-radius: 0.25rem;
+  background-color: blueviolet;
+  padding: 0.5rem;
+  opacity: 0.5;
+}
+
+@media screen and (min-width: 768px) {
+  .hire-me {
+    top: 2.5rem;
+    right: 2.5rem;
+    padding: 0.75rem;
+    background-color: cadetblue;
+    transition: 2s linear;
+  }
+  .header:hover .hire-me,
+  .header:focus-within .hire-me {
+    transform: scale(-1.5);
+
+    opacity: 0.5;
+    background-color: blue;
+    color: yellow;
+  }
+}
+
+.experience-heading {
+  display: flex;
+  flex-direction: column;
+}
+@media screen and (min-width: 768px) {
+  .experience-heading {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    vertical-align: baseline;
+  }
+}
+
 .main {
-  max-width: 800px;
+  max-width: 75ch;
   margin: 0 auto;
-  padding:16px;
+  padding: 1 rem;
   background-color: white;
+}
+
+.footer {
+  color: rgb(24, 4, 4);
+  background-image: linear-gradient(white, pink, royalblue, navy);
+  padding: 20px;
+  text-align: center;
+}
+
+@media print {
+  aside {
+    display: none;
+  }
+  nav {
+    display: none;
+  }
 }
