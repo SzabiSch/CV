@@ -3,7 +3,8 @@ font-family: 'Dancing Script', cursive;
 font-family: 'Lora', serif;
 font-family: 'Roboto', sans-serif;
 */
-
+*,
+*:before,
 *:after {
   box-sizing: border-box;
 }
@@ -19,6 +20,19 @@ html {
   .main {
     max-width: 65ch;
   }
+}
+
+body {
+  --text-color: black;
+  --background-color: snow;
+  --header-start-color: white;
+  --nav-focus-text-color: white;
+  --header-stop-color: grey;
+  --hover-nav-bg-color: yellow;
+  --hover-nav-text-color: blue;
+  --nav-focus-bg-color: red;
+  --hire-me-bg-color: blueviolet;
+  --footer-end-gradient-color: blueviolet;
 }
 
 @media screen and (min-width: 992px) {
@@ -44,16 +58,26 @@ body {
 }
 
 **:selection {
-  background-color: snow;
+  background-color: var(--background-color);
 }
 /* some effects */
 .header {
   padding: 3rem 0rem;
   margin-top: 0rem;
   text-align: center;
-  background-color: lightsalmon;
+  background-image: linear-gradient(
+    125deg,
+    var(--header-start-color),
+    var(--header-stop-color)
+  );
 }
 
+a,
+a:hover,
+a:active,
+a:focus {
+  color: var(--text-color);
+}
 .head-job::after {
   content: "👨‍🎓";
 }
@@ -65,22 +89,25 @@ body {
 }
 /* hover and coloring*/
 .navigation:hover {
-  color: blue;
-  background-color: yellow;
+  color: var(--hover-nav-text-color);
+  background-color: var(--hover-nav-bg-color);
+  padding: 0.2rem;
+  border-radius: 0.2rem;
 }
 /* Dynamische Faerbung beim click*/
-.navigation:active {
-  background-color: red;
-  color: white;
+.navigation:focus {
+  background-color: var(--nav-focus-bg-color);
+  color: var(--nav-focus-text-color);
   transition: 4s;
   font-weight: bold;
-  padding: 5px;
-  border-radius: 5px;
+  padding: 0.3rem;
+  border-radius: 0.3rem;
+  border-style: dotted;
 }
 
 /* Entfernung zw Nav Elementen*/
 .navigation + .navigation {
-  margin-left: 16px;
+  margin-left: 1rem;
 }
 
 @media screen and (min-width: 768px) {
@@ -104,7 +131,7 @@ body {
   top: 2rem;
   right: 2rem;
   border-radius: 0.25rem;
-  background-color: blueviolet;
+  background-color: var(--hire-me-bg-color);
   padding: 0.5rem;
   opacity: 0.5;
 }
@@ -141,15 +168,18 @@ body {
 }
 
 .main {
-  max-width: 75ch;
+  max-width: 60ch;
   margin: 0 auto;
   padding: 1 rem;
-  background-color: white;
+  background-color: var(--background-color);
 }
 
 .footer {
   color: rgb(24, 4, 4);
-  background-image: linear-gradient(white, pink, royalblue, navy);
+  background-image: linear-gradient(
+    var(--background-color),
+    var(--footer-end-gradient-color)
+  );
   padding: 20px;
   text-align: center;
 }
