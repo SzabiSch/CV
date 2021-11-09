@@ -33,6 +33,7 @@ body {
   --nav-focus-bg-color: red;
   --hire-me-bg-color: blueviolet;
   --footer-end-gradient-color: blueviolet;
+  background-color: var(--text-color);
 }
 
 @media screen and (min-width: 992px) {
@@ -40,7 +41,9 @@ body {
     font-size: 22px;
   }
   .main {
+    background-color: var(--background-color);
     max-width: 60ch;
+    margin: 0 auto;
   }
 }
 
@@ -159,6 +162,35 @@ a:focus {
   flex-direction: column;
 }
 @media screen and (min-width: 768px) {
+  .main {
+    width: 100vw;
+    height: 100%;
+    display: grid;
+    grid-template-columns: 1fr 2.5fr;
+    grid-template-rows: 0.3fr 2fr 1.5fr;
+    grid-template-areas:
+      "profile profile"
+      "exp content"
+      "skills skills";
+  }
+  .oben {
+    grid-area: profile;
+    background-color: bisque;
+  }
+
+  .links {
+    grid-area: exp;
+    background-color: yellow;
+  }
+  .rechts {
+    grid-area: content;
+    background-color: lightskyblue;
+  }
+  .unten {
+    grid-area: skills;
+    background-color: red;
+  }
+
   .experience-heading {
     display: flex;
     flex-direction: row;
